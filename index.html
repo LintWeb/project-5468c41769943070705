@@ -3,9 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project-5468c41769943070705</title>
+    <title>Medical Intern Portfolio - CMC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            text-align: center;
+            padding: 120px 0 100px;
+            margin-top: -80px;
+            padding-top: 200px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #007bff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .about {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: -40px 20px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .about h2 {
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .experience, .skills, .contact {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .experience h2, .skills h2, .contact h2 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: #007bff;
+            border-radius: 50%;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #007bff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .timeline {
+                padding-left: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Blank white page -->
+    <header>
+        <nav>
+            <div class="logo">Medical Portfolio</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>Medical Intern at CMC</h1>
+            <p>Dedicated to patient care and medical excellence</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-content">
+                <div>
+                    <h2>About Me</h2>
+                    <p>I am currently serving as a medical intern at Christian Medical College (CMC), Vellore. My journey in medicine is driven by a passion for patient care, continuous learning, and contributing to healthcare advancement.</p>
+                    <p>During my internship, I have gained hands-on experience in various clinical departments, including internal medicine, surgery, pediatrics, and emergency care. I am committed to providing compassionate care and staying updated with the latest medical practices.</p>
+                </div>
+                <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Medical+Intern" alt="Medical Intern">
+            </div>
+        </section>
+
+        <section class="experience" id="experience">
+            <h2>Education & Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Medical Internship</h3>
+                    <p><strong>Christian Medical College (CMC), Vellore</strong></p>
+                    <p>2024 - Present</p>
+                    <p>Rotating through various clinical departments, gaining comprehensive medical experience.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>MBBS Degree</h3>
+                    <p><strong>Medical College</strong></p>
+                    <p>2019 - 2024</p>
+                    <p>Completed undergraduate medical education with focus on clinical skills and theoretical knowledge.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Clinical Rotations</h3>
+                    <p><strong>Various Hospitals</strong></p>
+                    <p>Throughout Internship</p>
+                    <p>Experience in medicine, surgery, pediatrics, obstetrics, gynecology, and emergency medicine.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <h2>Medical Skills & Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Clinical Assessment</h3>
+                    <p>Patient history taking, physical examination, and differential diagnosis.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Emergency Care</h3>
+                    <p>Acute patient management, resuscitation, and critical care interventions.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Surgical Assistance</h3>
+                    <p>Operating room procedures, wound care, and perioperative management.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Patient Communication</h3>
+                    <p>Effective communication with patients, families, and healthcare teams.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Medical Documentation</h3>
+                    <p>Accurate record-keeping, case notes, and medical reporting.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Research & Learning</h3>
+                    <p>Evidence-based medicine, continuous professional development.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Medical Intern Portfolio. All rights reserved.</p>
+    </footer>
 </body>
 </html>
